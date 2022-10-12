@@ -1,0 +1,33 @@
+[GLOBAL]
+pants_version = "2.14.0rc3"
+# The PEP 621 plugin is needed until (and if) pants includes that code directly
+pythonpath = ["%(buildroot)s/pants-plugins"]
+
+backend_packages = [
+    "pants.backend.python",
+    "pants.backend.plugin_development",
+    "pep621",
+    "pants.backend.python.lint.black",
+    "pants.backend.python.lint.isort",
+    "pants.backend.python.lint.flake8",
+]
+
+[anonymous-telemetry]
+enabled = false
+
+[python]
+tailor_ignore_empty_init_files = false
+tailor_pex_binary_targets = false
+
+[python-infer]
+init_files = "always"
+unowned_dependency_behavior = "error"
+
+[source]
+root_patterns = [
+  "pants-plugins",
+]
+
+[pytest]
+extra_requirements.add = ["pydevd-pycharm==223.6160.21"]
+lockfile = "pants-plugins/pytest.lock.txt"
