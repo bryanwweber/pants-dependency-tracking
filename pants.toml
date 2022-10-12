@@ -16,6 +16,8 @@ backend_packages = [
 enabled = false
 
 [python]
+enable_resolves = true
+interpreter_constraints = ["CPython==3.9.*"]
 tailor_ignore_empty_init_files = false
 tailor_pex_binary_targets = false
 
@@ -25,9 +27,17 @@ unowned_dependency_behavior = "error"
 
 [source]
 root_patterns = [
-  "pants-plugins",
+  "/pants-plugins",
 ]
 
 [pytest]
 extra_requirements.add = ["pydevd-pycharm==223.6160.21"]
 lockfile = "pants-plugins/pytest.lock.txt"
+args = ["-vv", "--no-header"]
+
+[python-repos]
+find_links = ["file://%(buildroot)s/dist"]
+path_mappings = ["WHEELS_DIR|%(buildroot)s/dist"]
+
+[python.resolves]
+pants-plugins = "pants-plugins/lock.txt"
