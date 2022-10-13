@@ -140,7 +140,7 @@ def test_pyproject_toml(rule_runner: RuleRunner) -> None:
                 {
                     "requirements": ["pytest>=5.7.0"],
                     "dependencies": [file_addr.spec],
-                    "tags": ["test"],
+                    # "tags": ["test"],
                 },
                 Address("", target_name="reqs", generated_name="pytest"),
             ),
@@ -148,7 +148,7 @@ def test_pyproject_toml(rule_runner: RuleRunner) -> None:
                 {
                     "requirements": ["notebook>=6.1.0"],
                     "dependencies": [file_addr.spec],
-                    "tags": ["another-tag", "jupyter"],
+                    "tags": ["another-tag"],
                 },
                 Address("", target_name="reqs", generated_name="notebook"),
             ),

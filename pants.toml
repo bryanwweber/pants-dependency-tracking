@@ -6,7 +6,7 @@ pythonpath = ["%(buildroot)s/pants-plugins"]
 backend_packages = [
     "pants.backend.python",
     "pants.backend.plugin_development",
-    # "pep621",
+    "pep621",
     "pants.backend.python.lint.black",
     "pants.backend.python.lint.isort",
     "pants.backend.python.lint.flake8",

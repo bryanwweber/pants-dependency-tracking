@@ -67,12 +67,12 @@ def parse_pyproject_toml(
     for tag, opt_dep in optional_dependencies.items():
         for dep in opt_dep:
             req = PipRequirement.parse(dep, description_of_origin=rel_path)
-            canonical_project_name = canonicalize_project_name(req.project_name)
-            override = overrides.get(canonical_project_name, {})
-            tags: list[str] = override.get("tags", [])
-            tags.append(tag)
-            override["tags"] = tags
-            overrides[canonical_project_name] = override
+            # canonical_project_name = canonicalize_project_name(req.project_name)
+            # override = overrides.get(canonical_project_name, {})
+            # tags: list[str] = override.get("tags", [])
+            # tags.append(tag)
+            # override["tags"] = tags
+            # overrides[canonical_project_name] = override
             yield req
 
 
