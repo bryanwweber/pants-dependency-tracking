@@ -20,4 +20,5 @@ python_source(
 )
 
 pants_requirements(name="pep621-pants-requirements", resolve="pants-plugins")
-pep621_requirements(name="pep621-requirements", resolve="pants-plugins")
+# pep621_requirements(name="pep621-requirements", resolve="pants-plugins")
+python_requirements(name="pep621-requirements", resolve="pants-plugins")
